@@ -1,5 +1,7 @@
 require "minitest/autorun"
 require "minitest/pride"
+require_relative '../lib/direwolf'
+
 
 class DirewolfTest < Minitest::Test
 
@@ -10,8 +12,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_default_home_is_beyond_the_wall_and_can_have_another_name
-    skip
-
     wolf = Direwolf.new('Lady')
 
     assert_equal 'Beyond the Wall', wolf.home
@@ -19,8 +19,6 @@ class DirewolfTest < Minitest::Test
   end
 
   def test_default_size_is_massive
-    skip
-
     wolf = Direwolf.new('Ghost')
 
     assert_equal 'Massive', wolf.size
