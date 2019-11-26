@@ -1,3 +1,5 @@
+require_relative '../lib/person'
+
 class Medusa
 
   attr_reader :name, :statues
@@ -8,8 +10,12 @@ class Medusa
   end
 
   def stare(person)
-    statues << person
-    person.stoned = true
+    if @statues.count < 3
+      @statues << person
+      person.stoned = true
+    else
+      @statues.shift
+      @statues << person
+    end
   end
-
 end
