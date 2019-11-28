@@ -25,7 +25,7 @@ class SortByTest < Minitest::Test
     skip
     distances = ["1cm", "9cm", "30cm", "4cm", "2cm"]
     sorted = distances.sort_by do |distance|
-      distance[0]
+
     end
 
     assert_equal ["1cm", "2cm", "4cm", "9cm", "30cm"], sorted
