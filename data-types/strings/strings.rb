@@ -9,54 +9,40 @@ require 'pry'
 
 class StringTest < Minitest::Test
   def test_1
-    skip
     name = "alice"
     # In place of the line below, call a method on the name variable
     # defined above to acheive the expected output.
-    actual = name._____
-    expected = "Alice"
 
-    assert_equal expected, actual
+    assert_equal "Alice", name.capitalize
   end
 
   def test_2
-    skip
     name = "aLiCe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
-    expected = "ALICE"
 
-    assert_equal expected, actual
+    assert_equal "ALICE", name.upcase
   end
 
   def test_3
-    skip
     name = "AlIcE"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
-    expected = "alice"
 
-    assert_equal expected, actual
+    assert_equal "alice", name.downcase
   end
 
   def test_4
-    skip
     rhyme = "peter piper picked a peck of picked peppers"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
-    expected = "sreppep dekcip fo kcep a dekcip repip retep"
 
-    assert_equal expected, actual
+    assert_equal "sreppep dekcip fo kcep a dekcip repip retep", rhyme.reverse
   end
 
   def test_5
-    skip
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
-    expected = "kicking"
+    word[0] = "k"
 
-    assert_equal expected, actual
+    assert_equal "kicking", word
   end
 
   def test_6
