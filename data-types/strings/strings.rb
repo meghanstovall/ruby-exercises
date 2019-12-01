@@ -46,13 +46,11 @@ class StringTest < Minitest::Test
   end
 
   def test_6
-    skip
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
-    expected = "clocking"
+    word[0..1] = "clo"
 
-    assert_equal expected, actual
+    assert_equal "clocking", word
   end
 
   def test_7
