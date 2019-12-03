@@ -32,9 +32,15 @@ class Bag
   def grab(candy_type)
     @candies.each do |candy|
       if candy.type == candy_type
+        @candies.delete(candy)
         return candy
       end
     end
+  end
+
+  def take(number_of_candy_to_take)
+    taken = []
+    number_of_candy_to_take.times {candy = grab(candy), taken << candy}
   end
 
 end

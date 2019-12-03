@@ -65,11 +65,10 @@ class BagTest < Minitest::Test
   end
 
   def test_grabbing_candy_removes_it_from_the_bag
-    skip
     bag = Bag.new
-    bag << Candy.new("Reese's Pieces")
-    bag << Candy.new("Junior Mints")
-    bag << Candy.new("Reese's Pieces")
+    bag.candies << Candy.new("Reese's Pieces")
+    bag.candies << Candy.new("Junior Mints")
+    bag.candies << Candy.new("Reese's Pieces")
     assert_equal 3, bag.count
 
     candy = bag.grab "Reese's Pieces"
@@ -77,11 +76,10 @@ class BagTest < Minitest::Test
   end
 
   def test_take_a_number_of_candies_from_the_bag
-    skip
     bag = Bag.new
-    bag << Candy.new("Swedish Fish")
-    bag << Candy.new("Milky Way")
-    bag << Candy.new("Cotton Candy")
+    bag.candies << Candy.new("Swedish Fish")
+    bag.candies << Candy.new("Milky Way")
+    bag.candies << Candy.new("Cotton Candy")
 
     assert_equal 3, bag.count
 
