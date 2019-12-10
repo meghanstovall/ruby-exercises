@@ -40,7 +40,12 @@ class Bag
 
   def take(number_of_candy_to_take)
     taken = []
-    number_of_candy_to_take.times {candy = grab(candy), taken << candy}
+    count = 1
+    until count > number_of_candy_to_take
+      taken << @candies.shift
+      count += 1
+    end
+    taken
   end
 
 end
