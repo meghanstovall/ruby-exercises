@@ -37,7 +37,6 @@ class ArraysTest < Minitest::Test
   end
 
   def test_4
-    skip
     world_cup = ["Germany", "Mexico", "Iceland", "Portugal"]
     world_cup << "Brazil"
 
@@ -107,16 +106,15 @@ class ArraysTest < Minitest::Test
   end
 
   def test_9
-    skip
     scores = [23, 56, 34, 29, 48]
     # Call a method on the scores variables that will
     # move the elements two spots to the left
-    new_scores = scores
+    new_scores = scores.rotate(2)
     assert_equal [34, 29, 48, 23, 56], new_scores
 
     # Now call a method on the scores variables that will
     # move the elements one spot to the right
-    new_scores = scores
+    new_scores = scores.rotate(4)
     assert_equal [48, 23, 56, 34, 29], new_scores
   end
 
