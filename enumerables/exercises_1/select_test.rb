@@ -101,5 +101,4 @@ class SelectTest < Minitest::Test
 
     assert_equal [{:dog=>"fido"}, {:stuff=>"things"}], hashes
   end
-
 end
