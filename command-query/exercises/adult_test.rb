@@ -4,13 +4,19 @@ require 'minitest/pride'
 require_relative 'adult'
 
 class AdultTest < Minitest::Test
+
+  def test_it_exists
+    adult = Adult.new
+
+    assert_instance_of Adult, adult
+  end
+
   def test_adult_is_sober
     adult = Adult.new
     assert adult.sober?, "Adult should really be sober right now."
   end
 
   def test_adult_does_not_get_drunk_too_easily
-    skip
     adult = Adult.new
 
     adult.consume_an_alcoholic_beverage
