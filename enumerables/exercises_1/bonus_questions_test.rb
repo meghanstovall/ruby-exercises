@@ -32,16 +32,18 @@ class BonusQuestionsTest < Minitest::Test
 
   def test_sum_of_factorials
     sum_of_factorials = 0
+    previous = 1
     numbers = [1, 2, 3, 4, 5]
     numbers.each do |number|
-
+      previous = previous * number
+      sum_of_factorials += previous
     end
+    sum_of_factorials
 
     assert_equal 153, sum_of_factorials
   end
 
   def test_first_giant_squid
-    skip
     squid1 = Squid.new('tiny')
     squid2 = Squid.new('inky')
     squid3 = Squid.new('giant')
@@ -50,21 +52,19 @@ class BonusQuestionsTest < Minitest::Test
 
     squiddies = [squid1, squid2, squid3, squid4, squid5]
 
-    # write code here
+    found = squiddies.find {|squid| squid.size == 'giant'}
 
     assert_equal squid3, found
   end
 
   def test_max_value
-    skip
-    max_num = 0
     numbers = [2, 16, 6, 50, 12]
-    # write code here
+    max_num = numbers.max
+
     assert_equal 50, max_num
   end
 
   def test_first_weird_thing_using_find
-    skip
     thing1 = Thing.new('odd')
     thing2 = Thing.new('cool')
     thing3 = Thing.new('weird')
@@ -73,13 +73,12 @@ class BonusQuestionsTest < Minitest::Test
 
     things = [thing1, thing2, thing3, thing4, thing5]
 
-    # write code here
+    found = things.find {|thing| thing.weird?}
 
     assert_equal thing3, found
   end
 
   def test_first_pink_unicorn
-    skip
     unicorn1 = Unicorn.new('white')
     unicorn2 = Unicorn.new('sparkly')
     unicorn3 = Unicorn.new('purple')
@@ -88,7 +87,7 @@ class BonusQuestionsTest < Minitest::Test
 
     unicorns = [unicorn1, unicorn2, unicorn3, unicorn4, unicorn5]
 
-    # write code here
+    found = unicorns.find {|unicorn| unicorn.pink?}
 
     assert_equal unicorn4, found
   end
