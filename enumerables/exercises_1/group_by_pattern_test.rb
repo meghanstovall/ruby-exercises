@@ -21,6 +21,7 @@ class GroupByPatternTest < Minitest::Test
       odd_and_even[1] << number if number.odd?
       odd_and_even[0] << number if number.even?
     end
+    
     expected = {1=>[1, 1, 3, 5, 13, 21, 55], 0=>[2, 8, 34]}
     assert_equal expected, odd_and_even
   end
