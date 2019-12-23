@@ -17,16 +17,18 @@ class ReducePatternTest < Minitest::Test
     numbers = [28, 12, 38, 1, 91]
     difference = 0
     numbers.each do |number|
-      # Your code goes here
+      difference -= number
     end
+
     assert_equal -170, difference
   end
 
   def test_multiply_list_of_numbers
-    skip
     numbers = [2, 3, 5, 7]
-    product = 1
-    # Your code goes here
+    product = numbers.reduce(1) do |multiply, number|
+      multiply * number
+    end
+
     assert_equal 210, product
   end
 
@@ -34,7 +36,7 @@ class ReducePatternTest < Minitest::Test
     skip
     keywords = ["fish", "blue"]
     phrase = 'one fish two fish red fish blue fish'
-    # Your code goes here
+
     assert_equal 'one FISH two FISH red FISH BLUE FISH', phrase
   end
 
@@ -42,7 +44,8 @@ class ReducePatternTest < Minitest::Test
     skip
     numbers = [2, 2, 2, 5, 7]
     quotient = 560
-    # Your code goes here
+
+
     assert_equal 2, quotient
   end
 
